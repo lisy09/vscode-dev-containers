@@ -1,0 +1,7 @@
+pyyaml
+requests
+loguru
+numpy
+
+# for test
+pytest

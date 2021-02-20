@@ -16,7 +16,6 @@
 
     "extensions": [
         "editorconfig.editorconfig",
-        "sonarsource.sonarlint-vscode",
         "visualstudioexptteam.vscodeintellicode",
         "golang.Go",
     ],

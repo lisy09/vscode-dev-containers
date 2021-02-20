@@ -1,0 +1,42 @@
+{
+    "name": "${localWorkspaceFolder}",
+	"dockerComposeFile":"docker-compose.yml",
+	"shutdownAction": "stopCompose",
+	"service":"python-dev-base",
+	"runArgs": [
+		"--env-file", "../.env"
+	],
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"python.pythonPath": "/usr/local/bin/python",
+		"python.linting.enabled": true,
+		"python.linting.pylintEnabled": true,
+		"python.formatting.autopep8Path": "/usr/local/py-utils/bin/autopep8",
+		"python.formatting.blackPath": "/usr/local/py-utils/bin/black",
+		"python.formatting.yapfPath": "/usr/local/py-utils/bin/yapf",
+		"python.linting.banditPath": "/usr/local/py-utils/bin/bandit",
+		"python.linting.flake8Path": "/usr/local/py-utils/bin/flake8",
+		"python.linting.mypyPath": "/usr/local/py-utils/bin/mypy",
+		"python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
+		"python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
+		"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint"
+	},
+
+    "extensions": [
+        "editorconfig.editorconfig",
+        "sonarsource.sonarlint-vscode",
+        "visualstudioexptteam.vscodeintellicode",
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+    ],
+    "workspaceMount": "",
+    "mounts": [
+    ],
+    "workspaceFolder": "/workspace",
+    "initializeCommand": "if [ \"$(docker network ls -f name=app -q)\" = \"\" ]; then docker network create app; fi",
+    
+    // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
+}
