@@ -2,7 +2,7 @@
     "name": "${localWorkspaceFolder}",
 	"dockerComposeFile":"docker-compose.yml",
 	"shutdownAction": "stopCompose",
-	"service":"java-dev-base",
+	"service":"scala-dev-base",
 	"runArgs": [
 		"--env-file", "../.env"
 	],
@@ -11,6 +11,7 @@
         "terminal.integrated.shell.linux": "/bin/bash",
         "java.home": "/docker-java-home",
         "maven.executable.path": "/usr/local/sdkman/candidates/maven/current/bin/mvn",
+        "metals.sbtScript": "/usr/local/sdkman/candidates/sbt/current/bin/sbt",
     },
 
     "extensions": [
@@ -19,6 +20,8 @@
         "visualstudioexptteam.vscodeintellicode",
         "vscjava.vscode-java-pack",
         "vscjava.vscode-java-dependency",
+        "scala-lang.scala",
+        "scalameta.metals",
         "redhat.fabric8-analytics",
         "shengchen.vscode-checkstyle",
         "dotjoshjohnson.xml"
