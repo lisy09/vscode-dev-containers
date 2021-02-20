@@ -11,9 +11,19 @@ incremental-tasks: docker-images push
 alway-run-tasks: 
 
 .PHONY: docker-images
-docker-images: 
-	$(SCRIPTS_DIR)/build_docker_images.sh
+docker-images: base
 
+.PHONY: base
+base:
+	$(SCRIPTS_DIR)/build_base.sh
+	
 .PHONY: push
 push: 
 	$(SCRIPTS_DIR)/push_docker_images.sh
+	
+.PHONY: clean
+clean: delete-docker-images
+
+.PHONY: delete-docker-images
+delete-docker-images: 
+	$(SCRIPTS_DIR)/delete_local_images.sh

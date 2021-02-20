@@ -1,6 +1,6 @@
-[issues]: https://github.com/lisy09/project-template/issues
-[all-proposals]: https://github.com/lisy09/project-template/projects/1
-[_drafts]: https://github.com/lisy09/project-template/new/master/_drafts
+[issues]: https://github.com/lisy09/vscode-dev-containers/issues
+[all-proposals]: https://github.com/lisy09/vscode-dev-containers/projects/1
+[_drafts]: https://github.com/lisy09/vscode-dev-containers/new/master/_drafts
 [roadmap]: meta/ROADMAP.md
 [proposal_template]: meta/proposal_template
 [license]: ../LICENSE.md

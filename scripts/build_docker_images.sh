@@ -2,9 +2,9 @@
 
 readonly SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 readonly ROOT_DIR="$( cd $SCRIPT_DIR/.. >/dev/null 2>&1 && pwd )"
-source $ROOT_DIR/.env
+readonly lang_dir=$ROOT_DIR/lang
 
-COMMANDS=docker
+COMMANDS=make
 IFS=',' read -a commands <<< ${COMMANDS}
 for COMMAND in ${commands[@]}; do
     if ! command -v ${COMMAND} &> /dev/null; then
@@ -16,7 +16,6 @@ done
 set -e
 set -x
 
-docker build \
-    # --build-arg XXX=${XXX} \
-    -t ${BASE_IMAGE_FULL} \
-    ${ROOT_DIR}
+for dirname in ${lang_dir}/*; do
+    cd $dirname && make docker-images
+done

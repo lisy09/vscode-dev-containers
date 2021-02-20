@@ -1,6 +1,6 @@
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](meta/CODE_OF_CONDUCT.md)
 
-# project-template
+# vscode-dev-containers
 
 Origin: https://github.com/lisy09/vscode-dev-containers
 
@@ -21,7 +21,7 @@ Please check [CONTRIBUTING.md](meta/CONTRIBUTING.md).
 - `scripts/`: scripts for building/running
 - `.env`: env file used in scripts
 - `Makefile`: GNU Make Makefile as quick command entrypoint
-- `java`/`go`/...: src for building language dev-container
+- `lang/java`/`lang/go`/...: src for building language dev-container
 
 ## How to Use
 
@@ -35,19 +35,9 @@ Please check [CONTRIBUTING.md](meta/CONTRIBUTING.md).
 
 ### Build command
 
-To build all docker images locally:
+To build all docker images and push to the remote registry:
 ```bash
 make all
-```
-
-To push built docker images to the remote registry:
-```bash
-make push
-```
-
-To delete built local docker images:
-```bash
-make clean
 ```
 
 Or you can check `./Makefile` for more details.
