@@ -3,7 +3,7 @@ target
 .factorypath
 /.bloop/
 /.metals/
-project
+/project/*
 !/project/assembly.sbt
 !/project/plugins.sbt
 !/project/metals.sbt
