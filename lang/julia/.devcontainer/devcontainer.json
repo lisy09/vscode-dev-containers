@@ -1,0 +1,27 @@
+{
+    "name": "${localWorkspaceFolder}",
+	"dockerComposeFile":"docker-compose.yml",
+	"shutdownAction": "stopCompose",
+	"service":"julia-dev-base",
+	"runArgs": [
+		"--env-file", "../.env"
+	],
+
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+
+    "extensions": [
+        "editorconfig.editorconfig",
+        "visualstudioexptteam.vscodeintellicode",
+        "julialang.language-julia"
+    ],
+    "workspaceMount": "",
+    "mounts": [
+    ],
+    "workspaceFolder": "/workspace",
+    "initializeCommand": "if [ \"$(docker network ls -f name=app -q)\" = \"\" ]; then docker network create app; fi",
+	"postCreateCommand": "/julia-devcontainer-scripts/postcreate.jl",
+    // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
+}
